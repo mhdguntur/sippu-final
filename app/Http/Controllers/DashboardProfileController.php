@@ -23,10 +23,10 @@ class DashboardProfileController extends Controller
         $data = $request->validated();
 
         if ($request->url_ktp) {
-            $ktp_path = $request->file('url_ktp')->storePublicly('public/foto-ktp');
-            $data['url_ktp'] = ltrim($ktp_path, 'public/');
+            $ktp_path = $request->file('url_ktp')->storePublicly('foto-ktp');
+            $data['url_ktp'] = $ktp_path;
 
-            $img_path = storage_path('app/' . $ktp_path);
+            $img_path = storage_path('app/public/' . $ktp_path);
 
             $ktp_file = fopen($img_path, 'rb');
             $ktp_filename = basename($img_path);
@@ -42,9 +42,10 @@ class DashboardProfileController extends Controller
             try {
                 $ocr_data = Validator::make($response, [
                     'result.nik.value' => 'required|string',
+                    'result.nama.value' => 'required|string'
                 ])->validate();
 
-                if ($data['nik'] == $ocr_data['result']['nik']['value']) {
+                if ($data['nik'] == $ocr_data['result']['nik']['value'] && strtolower( $data['nama'])== strtolower( $ocr_data['result']['nama']['value'])) {
                     $data['status'] = 'Sudah Diverifikasi';
                     User::where('id', $profil->id)->update($data);
                     return redirect('dashboard/profil')->with('success', 'Selamat, profil Anda telah terverifikasi!');
