@@ -14,7 +14,11 @@
     <div class="row mt-4">
         <div class="col-lg-6 rounded px-5 py-3 shadow col-sm-12">
             <h4 class="text-center fw-bold mb-4">Profil</h4>
-            <img src="{{ asset('storage/' . auth()->user()->url_ktp) }}" class="img-fluid d-flex mx-auto rounded">
+            @if (auth()->user()->url_ktp)
+                <img src="{{ asset('storage/' . auth()->user()->url_ktp) }}" class="img-fluid d-flex mx-auto rounded">
+            @else
+                <div class="text-center">Foto KTP terverifikasi belum ada</div>
+            @endif
             @include('components.list-profil')
         </div>
         <div class="col-lg-6 col-sm-12 px-5 py-3">
@@ -84,7 +88,7 @@
                             <div class="input-group">
                                 <input type="file" class="form-control @error('url_ktp') is-invalid @enderror"
                                     id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" name="url_ktp"
-                                    aria-label="Upload">
+                                    aria-label="Upload" {{ auth()->user()->status == 'Sudah Diverifikasi' ? 'disabled' : ''}}>
                             </div>
                             @error('url_ktp')
                                 <div class=" invalid-feedback">
