@@ -77,7 +77,4 @@ Route::group([
 });
 
 // Login Pemerintah
-Route::controller(AuthPemerintah::class)->group(function () {
-    Route::get('pemerintah/login', 'index');
-    Route::post('pemerintah/auth', 'login');
-});
+
