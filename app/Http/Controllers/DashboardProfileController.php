@@ -10,6 +10,31 @@ use Illuminate\Validation\ValidationException;
 
 class DashboardProfileController extends Controller
 {
+    public function getOCR($ktp_path) {
+    $img_path = storage_path('app/public/' . $ktp_path);
+
+    $ktp_file = fopen($img_path, 'rb');
+    $ktp_filename = basename($img_path);
+
+    return Http::attach('file', $ktp_file, $ktp_filename)
+        ->acceptJson()
+        ->withHeaders([
+            'Authentication' => 'bearer ' . env('AKSARAKAN_TOKEN')
+        ])
+        ->put('https://api.aksarakan.com/document/ktp')
+        ->json();
+}
+
+    public function checkOCR($ocr_data) {
+    $data = Validator::make($ocr_data, [
+        'result.nik.value' => 'required|string',
+    ])->validate();
+
+        // dd($ocr_data);
+        // dd($data);
+    if (auth()->user()->nik === $ocr_data['result']['nik']['value']) return true;
+    else return false;
+}
 
     public function index()
     {
@@ -26,31 +51,17 @@ class DashboardProfileController extends Controller
             $ktp_path = $request->file('url_ktp')->storePublicly('foto-ktp');
             $data['url_ktp'] = $ktp_path;
 
-            $img_path = storage_path('app/public/' . $ktp_path);
-
-            $ktp_file = fopen($img_path, 'rb');
-            $ktp_filename = basename($img_path);
-
-            $response = Http::attach('file', $ktp_file, $ktp_filename)
-                ->acceptJson()
-                ->withHeaders([
-                    'Authentication' => 'bearer ' . env('AKSARAKAN_TOKEN')
-                ])
-                ->put('https://api.aksarakan.com/document/ktp')
-                ->json();
+            $ocr_data = DashboardProfileController::getOCR($ktp_path);
 
             try {
-                $ocr_data = Validator::make($response, [
-                    'result.nik.value' => 'required|string',
-                    'result.nama.value' => 'required|string'
-                ])->validate();
+                $is_valid = DashboardProfileController::checkOCR($ocr_data);
 
-                if ($data['nik'] == $ocr_data['result']['nik']['value'] && strtolower( $data['nama'])== strtolower( $ocr_data['result']['nama']['value'])) {
+                if ($is_valid) {
                     $data['status'] = 'Sudah Diverifikasi';
                     User::where('id', $profil->id)->update($data);
                     return redirect('dashboard/profil')->with('success', 'Selamat, profil Anda telah terverifikasi!');
                 } else {
-                    return redirect('dashboard/profil')->with('failed', 'Data KTP tidak sesuai!' . print_r($response, true));
+                    return redirect('dashboard/profil')->with('failed', 'Data KTP tidak sesuai!');
                 }
             } catch (ValidationException $e) {
                 return redirect('dashboard/profil')->with('failed', 'Foto KTP tidak terdeteksi!');
