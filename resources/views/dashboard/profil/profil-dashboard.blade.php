@@ -73,29 +73,6 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="col-6">
-                            <label for="status">Status</label>
-                            <input disabled type="text" class="form-control @error('status') is-invalid @enderror"
-                                name="status" id="status" value="{{ old('status', auth()->user()->status) }}">
-                            @error('status')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group row mb-4">
-                        <div class="col-6">
-                            <label for="url_ktp">Input KTP (.jpg/.png)</label>
-                            <div class="input-group">
-                                <input type="file" class="form-control @error('url_ktp') is-invalid @enderror"
-                                    id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" name="url_ktp"
-                                    aria-label="Upload" {{ auth()->user()->status == 'Sudah Diverifikasi' ? 'disabled' : ''}}>
-                            </div>
-                            @error('url_ktp')
-                                <div class=" invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
                     </div>
                     <h4 class="fw-bold mb-4">II. Profil Usaha</h4>
                     <div class="form-group row mb-4">
@@ -233,8 +210,38 @@
                             @enderror
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success d-block py-2"
-                        style="width: 140px; float:right;">Verifikasi</button>
+                    <button type="submit" class="btn btn-success d-block py-2" style="width: 140px; float:right;">Edit
+                        Data</button>
+                </form>
+
+                <form action="{{ url('dashboard/profil/verif-ktp/' . auth()->user()->id) }}" method="post"
+                    enctype="multipart/form-data" id="verify-ktp">
+                    @method('put')
+                    @csrf
+                    <div class="d-block">
+                        <div class="form-group row mb-4 mt-3">
+                            <input type=" text" class="form-control" disabled value="{{ auth()->user()->status }}"
+                                name="status">
+                        </div>
+                        <div class="form-group row mb-4 ">
+                            <div class="col-6">
+                                <label for="url_ktp">Input KTP (.jpg/.png)</label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control @error('url_ktp') is-invalid @enderror"
+                                        id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" name="url_ktp"
+                                        aria-label="Upload"
+                                        {{ auth()->user()->status == 'Sudah Diverifikasi' ? 'disabled' : '' }}>
+                                </div>
+                                @error('url_ktp')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success"
+                            {{ auth()->user()->status == 'Sudah Diverifikasi' ? 'disabled' : '' }}>Verifikasi</button>
+                    </div>
                 </form>
         </div>
     </div>

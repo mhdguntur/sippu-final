@@ -28,5 +28,6 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('umkm', fn (User $user) => $user->roles ===  "Masyarakat");
         Gate::define('pemerintah', fn (User $user) => $user->roles === "Pemerintah");
+        Gate::define('verified', fn (User $user) => $user->status === "Sudah Diverifikasi");
     }
 }

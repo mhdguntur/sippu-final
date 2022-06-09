@@ -24,26 +24,27 @@ class DashboardProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama' => 'required|max:255',
-            'email' => 'required|email|max:255',
-            'nik' => 'required|integer',
-            'alamat' => 'required|max:255',
-            'no_telp' => 'required|integer',
-            'url_ktp' => 'file|mimes:png,jpg',
-            'nama_usaha' => 'required|max:255',
-            'tenaga_tetap' => 'required|max:255',
-            'npwp' => 'required|max:255',
-            'tenaga_tidak_tetap' => 'required|max:255',
-            'no_iumk' => 'required|integer',
-            'tenaga_tidak_bayar' => 'required|integer',
-            'no_siup' => 'required|integer',
-            'kapasitas_produksi' => 'required|max:255',
-            'no_tdp' => 'required|integer',
-            'harga_satuan' => 'required|integer',
-            'tgl_mulai' => 'required|date',
-            'omzet' => 'required|integer',
-            'sektor_usaha' => 'required|max:255',
-            'modal_sendiri' => 'required|integer'
+            'nama' => 'required|sometimes|max:255',
+            'email' => 'required|sometimes|email|max:255',
+            'nik' => 'required|sometimes|integer',
+            'status' => 'sometimes',
+            'alamat' => 'required|sometimes|max:255',
+            'no_telp' => 'required|sometimes|integer',
+            'url_ktp' => 'required|sometimes|file|mimes:png,jpg',
+            'nama_usaha' => 'required|sometimes|max:255',
+            'tenaga_tetap' => 'required|sometimes|max:255',
+            'npwp' => 'required|sometimes|max:255',
+            'tenaga_tidak_tetap' => 'required|sometimes|max:255',
+            'no_iumk' => 'required|sometimes|integer',
+            'tenaga_tidak_bayar' => 'required|sometimes|integer',
+            'no_siup' => 'required|sometimes|integer',
+            'kapasitas_produksi' => 'required|sometimes|max:255',
+            'no_tdp' => 'required|sometimes|integer',
+            'harga_satuan' => 'required|sometimes|integer',
+            'tgl_mulai' => 'required|sometimes|date',
+            'omzet' => 'required|sometimes|integer',
+            'sektor_usaha' => 'required|sometimes|max:255',
+            'modal_sendiri' => 'required|sometimes|integer'
         ];
     }
 }

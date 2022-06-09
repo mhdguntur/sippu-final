@@ -8,33 +8,35 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
+
 class DashboardProfileController extends Controller
 {
-    public function getOCR($ktp_path) {
-    $img_path = storage_path('app/public/' . $ktp_path);
+    protected function getOCR($ktp_path)
+    {
+        $img_path = storage_path('app/public/' . $ktp_path);
 
-    $ktp_file = fopen($img_path, 'rb');
-    $ktp_filename = basename($img_path);
+        $ktp_file = fopen($img_path, 'rb');
+        $ktp_filename = basename($img_path);
 
-    return Http::attach('file', $ktp_file, $ktp_filename)
-        ->acceptJson()
-        ->withHeaders([
-            'Authentication' => 'bearer ' . env('AKSARAKAN_TOKEN')
-        ])
-        ->put('https://api.aksarakan.com/document/ktp')
-        ->json();
-}
+        return Http::attach('file', $ktp_file, $ktp_filename)
+            ->acceptJson()
+            ->withHeaders([
+                'Authentication' => 'bearer ' . env('AKSARAKAN_TOKEN')
+            ])
+            ->put('https://api.aksarakan.com/document/ktp')
+            ->json();
+    }
 
-    public function checkOCR($ocr_data) {
-    $data = Validator::make($ocr_data, [
-        'result.nik.value' => 'required|string',
-    ])->validate();
-
-        // dd($ocr_data);
+    protected function checkOCR($ocr_data)
+    {
+        $data = Validator::make($ocr_data, [
+            'result.nik.value' => 'required|string',
+        ])->validate();
         // dd($data);
-    if (auth()->user()->nik === $ocr_data['result']['nik']['value']) return true;
-    else return false;
-}
+        // dd($ocr_data);
+        if ($data['result']['nik']['value'] === auth()->user()->nik) return true;
+        else return false;
+    }
 
     public function index()
     {
@@ -46,11 +48,16 @@ class DashboardProfileController extends Controller
     public function update(DashboardProfileRequest $request, User $profil)
     {
         $data = $request->validated();
+        User::where('id', $profil->id)->update($data);
+        return redirect('dashboard/profil')->with('success', 'Data profil telah berhasil diedit!');
+    }
 
+    public function verifikasi(DashboardProfileRequest $request, User $profil)
+    {
+        $data = $request->validated();
         if ($request->url_ktp) {
             $ktp_path = $request->file('url_ktp')->storePublicly('foto-ktp');
             $data['url_ktp'] = $ktp_path;
-
             $ocr_data = DashboardProfileController::getOCR($ktp_path);
 
             try {

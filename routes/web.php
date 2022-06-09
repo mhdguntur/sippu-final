@@ -37,9 +37,7 @@ Route::controller(PelayananController::class)->group(function () {
     Route::get('pelayanan/{pelayanan:judul}', 'show');
     Route::get('pelayanan/{pelayanan:judul}/daftar', 'create')->middleware('auth');
     Route::post('pelayanan/daftar', 'store')->middleware('auth')->middleware('auth');
-    Route::get('pelayanan/daftar/sukses', function () {
-        return view('pelayanan.success', ['title' => 'Pendaftaran Sukses']);
-    });
+    Route::get('pelayanan/daftar/sukses', fn () => view('pelayanan.success', ['title' => 'Pendaftaran Sukses']));
 });
 
 // User Login & Registration
@@ -67,6 +65,7 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard/pelayanan', [DashboardPelayananController::class, 'index']);
     Route::get('dashboard/pelayanan/{pendaftaran:id}', [DashboardPelayananController::class, 'show']);
     Route::resource('dashboard/profil', DashboardProfileController::class)->only(['index', 'update']);
+    Route::put('dashboard/profil/verif-ktp/{profil:id}', [DashboardProfileController::class, 'verifikasi']);
 });
 
 // Pemerintah
@@ -79,4 +78,3 @@ Route::group([
 });
 
 // Login Pemerintah
-
