@@ -74,8 +74,5 @@ class DashboardProfileController extends Controller
                 return redirect('dashboard/profil')->with('failed', 'Foto KTP tidak terdeteksi!');
             }
         }
-
-        User::where('id', $profil->id)->update($data);
-        return redirect('dashboard/profil')->with('success', 'Data profil telah berhasil diedit!');
     }
 }

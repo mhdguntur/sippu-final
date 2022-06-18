@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-    <div class="row d-flex justify-content-end mt-5">
+    {{-- <div class="row d-flex justify-content-end mt-5">
         <div class="col-2">
             <div class="input-group">
                 <input type="text" name="search" id="search" style="border-color: rgb(255, 38, 0);" class="form-control">
@@ -40,7 +40,7 @@
                         class="fa-solid fa-magnifying-glass fa-xl"></i></button>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="row mt-3">
         <div class="col">
             <div class="table-responsive">

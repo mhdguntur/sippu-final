@@ -4,8 +4,6 @@
     <div class="row mt-5 d-flex justify-content-center">
         <h2 class="text-center font-weight-bold">Tentang UMKM</h3>
             <div class="col-10 mt-4">
-                <img src="{{ asset('storage/' . $user->url_ktp) }}" class="img-fluid rounded d-flex mx-auto mt-3"
-                    width="300px">
                 <ul class="list-group list-group-flush mt-5">
                     <li class="list-group-item">Nama Usaha: {{ $user->nama_usaha }}</li>
                     <li class="list-group-item">Nama Pemilik: {{ $user->nama }}</li>

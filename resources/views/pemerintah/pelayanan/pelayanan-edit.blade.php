@@ -47,7 +47,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-success d-block float-right mt-3">Tambah Data</button>
+                <button type="submit" class="btn btn-success d-block float-right mt-3">Edit Data</button>
             </form>
         </div>
     </div>

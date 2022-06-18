@@ -18,13 +18,13 @@
         <div class="col-4">
             {{ $pelayanan->links() }}
         </div>
-        <div class="col-2">
+        {{-- <div class="col-2">
             <div class="input-group">
                 <input type="text" name="search" id="search" style="border-color: rgb(255, 38, 0);" class="form-control">
                 <button class="btn" style="border-color: rgb(255, 38, 0);"><i
                         class="fa-solid fa-magnifying-glass fa-xl"></i></button>
             </div>
-        </div>
+        </div> --}}
     </div>
     <div class="row mt-3">
         <div class="col">

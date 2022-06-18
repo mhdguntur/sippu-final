@@ -31,7 +31,7 @@
                     <div class="form-group row mb-4">
                         <div class="col">
                             <label for="nama">Nama Anda</label>
-                            <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
+                            <input disabled class="form-control @error('nama') is-invalid @enderror" name="nama"
                                 id="nama" value="{{ old('nama', auth()->user()->nama) }}">
                             @error('nama')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -49,7 +49,7 @@
                     <div class="form-group row mb-4">
                         <div class="col">
                             <label for="nik">NIK</label>
-                            <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik" id="nik"
+                            <input disabled class="form-control @error('nik') is-invalid @enderror" name="nik" id="nik"
                                 value="{{ old('nik', auth()->user()->nik) }}">
                             @error('nik')
                                 <div class="invalid-feedback">{{ $message }}</div>
