@@ -27,7 +27,7 @@
     <hr width="100%" class="mt-5 mb-3">
     <div class="row">
         <div class="col-lg-10 col-sm-12">
-            <h5 style="font-weight: 800" class="mt-5">Shipping Details</h5>
+            <h5 style="font-weight: 800" class="mt-5">Pendaftaran Details</h5>
             <form class="mt-3" method="post" action="{{ url('pelayanan/daftar') }}">
                 @csrf
                 <input type="hidden" name="status_pendaftaran" value="Belum Dilaksanakan">
