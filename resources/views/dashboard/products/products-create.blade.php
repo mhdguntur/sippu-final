@@ -16,7 +16,7 @@
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <input type="hidden" name="slug" value="">
                 <div class="form-group mb-3">
-                    <label for="nama">Nama Produk</label>
+                    <label for="nama">Nama Produk*</label>
                     <input autofocus type="text" name="nama" id="nama"
                         class="form-control @error('nama') is-invalid @enderror">
                     @error('nama')
@@ -24,14 +24,14 @@
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="harga">Harga Produk</label>
+                    <label for="harga">Harga Produk*</label>
                     <input type="text" name="harga" id="harga" class="form-control @error('harga') is-invalid @enderror">
                     @error('harga')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group mb-4">
-                    <label for="deskripsi">Deskripsi</label>
+                    <label for="deskripsi">Deskripsi*</label>
                     <textarea name="deskripsi" id="deskripsi" cols="30" rows="5"
                         class="form-control @error('deskripsi') is-invalid @enderror"></textarea>
                     @error('deskripsi')

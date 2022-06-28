@@ -35,7 +35,7 @@
                 <input type="hidden" name="pelayanan_id" value="{{ $pelayanan->id }}">
                 <div class="row mb-4">
                     <div class="col">
-                        <label for="usaha">Nama Usaha</label>
+                        <label for="usaha">Nama Usaha*</label>
                         <input type="text" class="form-control @error('nama_usaha') is-invalid @enderror" name="nama_usaha"
                             value="{{ auth()->user()->nama_usaha }}">
                         @error('nama_usaha')
@@ -43,7 +43,7 @@
                         @enderror
                     </div>
                     <div class="col">
-                        <label for="pemilik">Nama Pemilik</label>
+                        <label for="pemilik">Nama Pemilik*</label>
                         <input type="text" class="form-control @error('nama_pemilik') is-invalid @enderror"
                             name="nama_pemilik" value="{{ auth()->user()->nama }}">
                         @error('nama_pemilik')
@@ -53,7 +53,7 @@
                 </div>
                 <div class="row mb-4">
                     <div class="col">
-                        <label for="kecamatan">Jalan</label>
+                        <label for="kecamatan">Jalan*</label>
                         <input type="text" name="jalan" value="{{ old('jalan') }}" id="jalan"
                             class="form-control @error('jalan') is-invalid @enderror">
                         @error('jalan')
@@ -61,7 +61,7 @@
                         @enderror
                     </div>
                     <div class="col">
-                        <label for="kelurahan">Kelurahan</label>
+                        <label for="kelurahan">Kelurahan*</label>
                         <input type="text" name="kelurahan" value="{{ old('kelurahan') }}" id="kelurahan"
                             class="form-control @error('kelurahan') is-invalid @enderror">
                         @error('kelurahan')
@@ -71,7 +71,7 @@
                 </div>
                 <div class="row mb-4">
                     <div class="col">
-                        <label for="kecamatan">Kab/kota</label>
+                        <label for="kecamatan">Kab/kota*</label>
                         <input type="text" name="kota" value="{{ old('kota') }}"
                             class="form-control @error('kota') is-invalid @enderror">
                         @error('kota')
@@ -79,7 +79,7 @@
                         @enderror
                     </div>
                     <div class="col">
-                        <label for="provinsi">Provinsi</label>
+                        <label for="provinsi">Provinsi*</label>
                         <input type="text" name="provinsi" value="{{ old('provinsi') }}"
                             class="form-control @error('provinsi') is-invalid @enderror">
                         @error('provinsi')
@@ -87,7 +87,7 @@
                         @enderror
                     </div>
                     <div class="col">
-                        <label for="pemilik">Handphone</label>
+                        <label for="pemilik">Handphone*</label>
                         <input type="text" value="{{ old('no_hp', auth()->user()->no_telp) }}" name="no_hp"
                             class="form-control @error('no_hp') is-invalid @enderror">
                         @error('no_hp')
@@ -97,7 +97,7 @@
                 </div>
                 <div class="row mb-4">
                     <div class="col">
-                        <label for="usaha">Email</label>
+                        <label for="usaha">Email*</label>
                         <input type="text" name="email" class="form-control @error('email') is-invalid @enderror"
                             value="{{ old('email', auth()->user()->email) }}">
                         @error('email')
@@ -105,21 +105,21 @@
                         @enderror
                     </div>
                     <div class="col">
-                        <label for="pemilik">Sektor Usaha</label>
+                        <label for="pemilik">Sektor Usaha*</label>
                         <input type="text" disabled name="sektor_usaha" class="form-control"
                             value="{{ auth()->user()->sektor_usaha }}">
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
-                        <label for="usaha">Modal Usaha</label>
+                        <label for="usaha">Modal Usaha*</label>
                         <input type="text" disabled
                             value="{{ auth()->user()->modal_sendiri + auth()->user()->modal_luar }}" name="modal_usaha"
                             class="form-control">
                         <small><i>* Diambil dari Modal Sendiri + Modal Luar</i></small>
                     </div>
                     <div class="col">
-                        <label for="pemilik">Pilih Tanggal Pelayanan</label>
+                        <label for="pemilik">Pilih Tanggal Pelayanan*</label>
                         <input type="date" onchange="ubah_tgl()" id="tgl_pelayanan" name="tanggal"
                             class="form-control @error('date') is-invalid @enderror">
                         @error('date')
@@ -129,7 +129,7 @@
                 </div>
                 <div class="row mb-4">
                     <div class="col">
-                        <label for="keluhan">Jelaskan Permasalahan Anda Secara Singkat!</label>
+                        <label for="keluhan">Jelaskan Permasalahan Anda Secara Singkat!*</label>
                         <textarea name="permasalahan" id="permasalahan" cols="30" rows="10"
                             class="form-control @error('permasalahan') is-invalid @enderror">{{ old('permasalahan') }}</textarea>
                         @error('permasalahan')

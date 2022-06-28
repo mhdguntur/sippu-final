@@ -13,21 +13,21 @@
             <form action="{{ route('pelayanan.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mb-3">
-                    <label for="judul">Judul</label>
+                    <label for="judul">Judul*</label>
                     <input type="text" name="judul" id="judul" class="form-control @error('judul') is-invalid @enderror">
                     @error('judul')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="jenis">Jenis</label>
+                    <label for="jenis">Jenis*</label>
                     <input type="text" name="jenis" id="jenis" class="form-control @error('jenis') is-invalid @enderror">
                     @error('jenis')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="deskripsi">Deskripsi</label>
+                    <label for="deskripsi">Deskripsi*</label>
                     <input type="text" name="deskripsi" id="deskripsi"
                         class="form-control @error('deskripsi') is-invalid @enderror">
                     @error('deskripsi')
@@ -35,7 +35,7 @@
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="url_foto">Input Foto (.jpg/.png)</label>
+                    <label for="url_foto">Input Foto (.jpg/.png/.jpeg max: 4096kb)</label>
                     <input type="file" name="url_foto" id="url_foto"
                         class="form-control w-25 @error('url_foto') is-invalid @enderror">
                     @error('url_foto')

@@ -17,11 +17,11 @@
     <li class="list-group-item">Tenaga Tetap: {{ auth()->user()->tenaga_tetap }}</li>
     <li class="list-group-item">Tenaga Tidak Tetap: {{ auth()->user()->tenaga_tidak_tetap }}</li>
     <li class="list-group-item">Tenaga Tidak Dibayar: {{ auth()->user()->tenaga_tidak_dibayar }}</li>
-    <li class="list-group-item">Kapasitsa Produksi: {{ auth()->user()->kapasitas_produksi }}</li>
-    <li class="list-group-item">Harga Satuan: {{ auth()->user()->harga_satuan }}</li>
-    <li class="list-group-item">Omzet: {{ auth()->user()->omzet }}</li>
-    <li class="list-group-item">Modal Sendiri: {{ auth()->user()->modal_sendiri }}</li>
-    <li class="list-group-item">Modal Luar: {{ auth()->user()->modal_luar }}</li>
+    <li class="list-group-item">Kapasitas Produksi: {{ auth()->user()->kapasitas_produksi }}</li>
+    <li class="list-group-item">Harga Satuan: Rp. {{number_format(auth()->user()->harga_satuan) }}</li>
+    <li class="list-group-item">Omzet: Rp. {{number_format(auth()->user()->omzet) }}</li>
+    <li class="list-group-item">Modal Sendiri: Rp. {{number_format(auth()->user()->modal_sendiri) }}</li>
+    <li class="list-group-item">Modal Luar: Rp. {{number_format(auth()->user()->modal_luar) }}</li>
     <li class="list-group-item">Laporan Keuangan: {{ auth()->user()->laporan_keuangan }}</li>
     <li class="list-group-item">Jangkauan Pemasaran: {{ auth()->user()->jangkauan_pemasaran }}</li>
     <li class="list-group-item">Pemasaran Online: {{ auth()->user()->pemasaran_online }}</li>

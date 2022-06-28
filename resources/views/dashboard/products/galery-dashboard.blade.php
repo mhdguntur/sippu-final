@@ -14,6 +14,7 @@
                 aria-expanded="false" aria-controls="collapseExample">
                 Tambah Gambar
             </button>
+            <p>(.png/.jpg/.jpeg max: 4096kb)</p>
             @error('url_foto')
                 <span class="text-danger mt-2 d-block">{{ $message }}</span>
             @enderror

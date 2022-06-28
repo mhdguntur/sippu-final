@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             @include('components.flash_message')
-            <img src="{{ asset('img/products-hero.png') }}" width="100%" class="mb-4 rounded" alt="">
+            <img src="{{ asset('img/banner.png') }}" width="100%" class="mb-4 rounded" alt="">
             {{-- <div class="input-group">
                 <input type="text" name="search" id="search" placeholder="Search your product" class="form-control"
                     style="border-color: rgb(255, 38, 0);">
@@ -19,7 +19,7 @@
                         <img src="{{ asset('storage/' . $image->url_foto) }}" width="270px" class="rounded img-fluid">
                     @endforeach
                     <h6 class="mt-2 text-dark font-weight-bold">{{ $data->nama }}</h6>
-                    <span class="text-orange">Rp. {{ $data->harga }}</span>
+                    <span class="text-orange">Rp. {{number_format($data->harga) }}</span>
                 </a>
             @empty
                 <h3 class="mx-auto mt-4 font-weight-bold">Tidak ada produk terbaru. Silakan Coba Lagi Nanti.</h3>

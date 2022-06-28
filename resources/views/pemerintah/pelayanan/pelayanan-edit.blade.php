@@ -15,7 +15,7 @@
                 @method('put')
                 @csrf
                 <div class="form-group mb-3">
-                    <label for="judul">Judul</label>
+                    <label for="judul">Judul*</label>
                     <input type="text" name="judul" id="judul" value="{{ old('judul', $pelayanan->judul) }}"
                         class="form-control @error('judul') is-invalid @enderror">
                     @error('judul')
@@ -23,7 +23,7 @@
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="jenis">Jenis</label>
+                    <label for="jenis">Jenis*</label>
                     <input type="text" name="jenis" value="{{ old('jenis', $pelayanan->jenis) }}" id="jenis"
                         class="form-control @error('jenis') is-invalid @enderror">
                     @error('jenis')
@@ -31,7 +31,7 @@
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="deskripsi">Deskripsi</label>
+                    <label for="deskripsi">Deskripsi*</label>
                     <input type="text" name="deskripsi" value="{{ old('deskripsi', $pelayanan->deskripsi) }}"
                         id="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror">
                     @error('deskripsi')
@@ -39,7 +39,7 @@
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="url_foto">Input Foto (.jpg/.png)</label>
+                    <label for="url_foto">Input Foto (.jpg/.png/.jpeg max: 4096kb)</label>
                     <input type="hidden" name="fotoLama" value={{ asset('storage/' . $pelayanan->url_foto) }}>
                     <input type="file" name="url_foto" id="url_foto"
                         class="form-control w-25 @error('url_foto') is-invalid @enderror">

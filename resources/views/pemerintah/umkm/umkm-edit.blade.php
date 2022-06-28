@@ -17,7 +17,7 @@
                 @method('put')
                 @csrf
                 <div class="form-group mb-3">
-                    <label for="nama_usaha">Nama Usaha</label>
+                    <label for="nama_usaha">Nama Usaha*</label>
                     <input type="text" value="{{ old('nama_usaha', $umkm->nama_usaha) }}" name="nama_usaha"
                         id="nama_usaha" class="form-control @error('nama_usaha') is-invalid @enderror">
                     @error('nama_usaha')
@@ -25,7 +25,7 @@
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="nama">Nama Pemilik</label>
+                    <label for="nama">Nama Pemilik*</label>
                     <input type="text" value="{{ old('nama', $umkm->nama) }}" name="nama" id="nama"
                         class="form-control @error('nama') is-invalid @enderror">
                     @error('nama')
@@ -33,7 +33,7 @@
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="sektor_usaha">Sektor Usaha</label>
+                    <label for="sektor_usaha">Sektor Usaha*</label>
                     <input type="text" value="{{ old('sektor_usaha', $umkm->sektor_usaha) }}" name="sektor_usaha"
                         id="sektor_usaha" class="form-control @error('sektor_usaha') is-invalid @enderror">
                     @error('sektor_usaha')
@@ -41,20 +41,36 @@
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="status">Status</label>
-                    <input type="text" value="{{ old('status', $umkm->status) }}" name="status" id="status"
+                    <label for="status">Status*</label>
+                    <select type="text" name="status" id="status" class="form-control @error('status') is-invalid @enderror">
+                        <option value="{{ old('status', $umkm->status)}}">{{ old('status', $umkm->status)}}</option>
+                        <option value="Sudah Diverifikasi">Sudah Diverifikasi</option>
+                        <option value="Belum Diverifikasi">Belum Diverifikasi</option>
+                    </select>
+                    @error('status')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                    {{-- <input type="text" value="{{ old('status', $umkm->status) }}" name="status" id="status"
                         class="form-control @error('status') is-invalid @enderror">
                     @error('status')
                         <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                    @enderror --}}
                 </div>
                 <div class="form-group mb-3">
-                    <label for="status">Roles</label>
-                    <input type="text" value="{{ old('roles', $umkm->roles) }}" name="roles" id="roles"
-                        class="form-control @error('roles') is-invalid @enderror">
+                    <label for="roles">Roles*</label>
+                    <select type="text" name="roles" id="roles" class="form-control @error('roles') is-invalid @enderror">
+                        <option value="{{ old('roles', $umkm->roles) }}">{{ old('roles', $umkm->roles) }}</option>
+                        <option value="Pemerintah">Pemerintah</option>
+                        <option value="Masyarakat">Masyarakat</option>
+                    </select>
                     @error('status')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
+                    {{-- <input type="text" value="{{ old('roles', $umkm->roles) }}" name="roles" id="roles"
+                        class="form-control @error('roles') is-invalid @enderror">
+                    @error('status')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror --}}
                 </div>
                 <button type="submit" class="btn py-2 btn-success d-block float-right" style="width: 140px;">Edit
                     Data</button>
