@@ -30,7 +30,7 @@ class DashboardProfileRequest extends FormRequest
             'status' => 'sometimes',
             'alamat' => 'required|sometimes|max:255',
             'no_telp' => 'required|sometimes|integer',
-            'url_ktp' => 'required|sometimes|file|mimes:png,jpg',
+            'url_ktp' => 'required|sometimes|file|mimes:png,jpg,jpeg|max:4096',
             'nama_usaha' => 'required|sometimes|max:255',
             'tenaga_tetap' => 'required|sometimes|max:255',
             'npwp' => 'required|sometimes|max:255',

@@ -27,7 +27,7 @@ class PelayananPemerintahRequest extends FormRequest
             'judul' => 'required|max:255',
             'jenis' => 'required|max:255',
             'deskripsi' => 'required|max:255',
-            'url_foto' => 'required|file|mimes:png,jpg|max:2048'
+            'url_foto' => 'required|file|mimes:png,jpg,jpeg|max:4096'
         ];
     }
 }
