@@ -14,6 +14,6 @@ class PelayananSeeder extends Seeder
      */
     public function run()
     {
-        Pelayanan::factory(5)->create();
+        // Pelayanan::factory(5)->create();
     }
 }

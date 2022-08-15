@@ -34,7 +34,7 @@ class SignupRequest extends FormRequest
             'url_ktp' => 'nullable',
             'nama_usaha' => 'required|max:255',
             'kelurahan' => 'required|max:35',
-            'no_telp' => 'required',
+            'no_telp' => 'required|numeric',
             'npwp' => 'required|integer',
             'no_iumk' => 'required|integer',
             'no_siup' => 'required|integer',

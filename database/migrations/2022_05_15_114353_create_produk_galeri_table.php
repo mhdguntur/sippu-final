@@ -15,7 +15,8 @@ class CreateProdukGaleriTable extends Migration
     {
         Schema::create('produk_galeri', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('produk_id');
+            $table->unsignedBigInteger('produk_id');
+            $table->foreign('produk_id')->references('id')->on('produk');
             $table->string('url_foto', 255);
             $table->timestamps();
         });

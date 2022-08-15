@@ -15,8 +15,10 @@ class CreatePendaftaranTable extends Migration
     {
         Schema::create('pendaftaran', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('pelayanan_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('pelayanan_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('pelayanan_id')->references('id')->on('pelayanan');
             $table->date('tanggal');
             $table->string('nama_usaha', 255);
             $table->string('nama_pemilik', 255);

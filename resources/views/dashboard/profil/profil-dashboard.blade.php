@@ -225,7 +225,7 @@
                         </div>
                         <div class="form-group row mb-4 ">
                             <div class="col-6">
-                                <label for="url_ktp">Input KTP (.jpg/.png/.jpeg max: 4096kb)</label>
+                                <label for="url_ktp">Input KTP (.jpg/.png/.jpeg)</label>
                                 <div class="input-group">
                                     <input type="file" class="form-control @error('url_ktp') is-invalid @enderror"
                                         id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" name="url_ktp"

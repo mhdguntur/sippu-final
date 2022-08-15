@@ -26,7 +26,7 @@ class PemerintahPendaftaranRequest extends FormRequest
         return [
             'nama_usaha' => 'required|max:255',
             'nama_pemilik' => 'required|max:255',
-            'no_hp' => 'required|max:255',
+            'no_hp' => 'required|integer|max:255',
             'permasalahan' => 'required|max:255',
             'status_pendaftaran' => 'required|max:255'
         ];

@@ -39,7 +39,7 @@
                     @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="url_foto">Input Foto (.jpg/.png/.jpeg max: 4096kb)</label>
+                    <label for="url_foto">Input Foto (.jpg/.png/.jpeg)</label>
                     <input type="hidden" name="fotoLama" value={{ asset('storage/' . $pelayanan->url_foto) }}>
                     <input type="file" name="url_foto" id="url_foto"
                         class="form-control w-25 @error('url_foto') is-invalid @enderror">

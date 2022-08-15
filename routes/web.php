@@ -73,8 +73,6 @@ Route::group([
     'middleware' => 'pemerintah', 'prefix' => 'pemerintah'
 ], function () {
     Route::resource('pelayanan', PelayananPemerintahController::class)->except('show');
-    Route::resource('umkm', UMKMPemerintahController::class)->except(['show', 'store', 'create']);
+    Route::resource('umkm', UMKMPemerintahController::class)->except(['store', 'create']);
     Route::resource('pendaftaran', PemerintahPendaftaranController::class)->except(['create', 'store', 'show']);
 });
-
-// Login Pemerintah
