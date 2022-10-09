@@ -167,18 +167,19 @@
 					<div class="col-md col-md-sm-12">
 						<label for="sektor_usaha">Sektor Usaha*</label>
 						<select name="sektor_usaha" id="sektor_usaha" class="form-control @error('sektor_usaha') is-invalid @enderror">
-							<option value="Bisnis Kuliner">Bisnis Kuliner</option>
+							<option value="Makanan dan Minuman  ">Makanan dan Minuman</option>
 							<option value="Bisnis Fashion">Bisnis Fashion</option>
 							<option value="Bisnis Pendidikan">Bisnis Pendidikan</option>
 							<option value="Bisnis Otomotif">Bisnis Otomotif</option>
-							<option value="Bisnis Agribisnis">Bisnis Agribisnis</option>
+							<option value="Perdagangan">Perdagangan</option>
+							<option value="Bisnis Agribisnis">Perikanan</option>
+							<option value="Bisnis Agribisnis">Pertanian</option>
 							<option value="Bisnis Tour & Travel">Bisnis Tour & Travel</option>
 							<option value="Bisnis Produk Kreatif">Bisnis Produk Kreatif</option>
 							<option value="Bisnis Teknologi Internet">Bisnis Teknologi Internet</option>
-							<option value="Bisnis Kecantikan">Bisnis Kecantikan</option>
-							<option value="Bisnis Event Organizer">Bisnis Event Organizer</option>
-							<option value="Bisnis Jasa Kebersihan">Bisnis Jasa Kebersihan</option>
-							<option value="Bisnis Kebutuhan Anak">Bisnis Kebutuhan Anak</option>
+							<option value="Obat-obatan dan Kecantikan">Obat-obatan dan Kecantikan</option>
+							<option value="Koperasi dan KUB">Koperasi dan KUB</option>
+							<option value="Jasa">Jasa</option>
 						</select>
 						@error('sektor_usaha')
 							<div class="invalid-feedback">{{ $message }}</div>

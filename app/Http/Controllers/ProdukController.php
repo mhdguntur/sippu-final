@@ -14,6 +14,12 @@ class ProdukController extends Controller
             'produk' => Produk::latest()->with('galeri')->get()
         ]);
     }
+    public function home()
+    {
+        return view('products.home',[
+            'title' => 'Home'
+        ]);
+    }
 
     public function show(Produk $produk)
     {

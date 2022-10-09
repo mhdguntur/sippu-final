@@ -3,7 +3,7 @@
         <img src="{{ asset('img/logo.png') }}">
         <a class="navbar-brand text-uppercase" href="{{ url('/') }}">
             DISPERINDAGKOP UKM Provinsi
-            <span class="d-block">Riau | UPT. PLUT UMKM</span>
+            <span class="d-block">Riau | UPT. PLUT KUMKM</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,8 +11,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item {{ Request::is('/') || Request::is('produk*') ? 'active' : '' }} mx-3">
-                    <a class="nav-link" href="{{ url('/') }}">Produk</a>
+                <li class="nav-item {{ Request::is('/') || Request::is('/*') ? 'active' : '' }} mx-3">
+                    <a class="nav-link" href="{{ url('/') }}">Home</a>
+                </li>
+                <li class="nav-item {{ Request::is('produk') || Request::is('produk*') ? 'active' : '' }} mx-3">
+                    <a class="nav-link" href="{{ url('produk') }}">Produk</a>
                 </li>
                 <li class="nav-item {{ Request::is('pelayanan*') ? 'active' : '' }} mx-3">
                     <a class="nav-link" href="{{ url('pelayanan') }}">Pelayanan</a>

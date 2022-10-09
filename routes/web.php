@@ -26,7 +26,8 @@ use App\Http\Controllers\UMKMPemerintahController;
 
 // Produk
 Route::controller(ProdukController::class)->group(function () {
-    Route::get('/', 'index');
+    Route::get('produk', 'index');
+    Route::get('/', 'home');
     Route::get('produk/{produk:slug}', 'show');
     Route::get('produk/tentang/{user:id}', 'about');
 });

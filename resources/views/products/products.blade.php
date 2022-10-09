@@ -12,11 +12,11 @@
                         class="fa-solid fa-magnifying-glass fa-xl"></i></button>
             </div> --}}
         </div>
-        <div class="row mt-4 d-flex justify-content-between">
+        <div class="row mt-4 d-flex justify-content-center justify-content-md-between">
             @forelse ($produk as $data)
                 <a href="{{ url("produk/$data->slug") }}" class="text-decoration-none mb-4">
                     @foreach ($data->galeri->take(1) as $image)
-                        <img src="{{ asset('storage/' . $image->url_foto) }}" width="270px" class="rounded img-fluid">
+                        <img src="{{ asset('storage/' . $image->url_foto) }}" style=" width:270px; height:250px; object-fit: cover; " class="rounded img-fluid">
                     @endforeach
                     <h6 class="mt-2 text-dark font-weight-bold">{{ $data->nama }}</h6>
                     <span class="text-orange">Rp. {{number_format($data->harga) }}</span>
