@@ -129,6 +129,28 @@
         {{-- visi end --}}
     </div>
     <br>
+    <li class="list-group-item bg-success" style="color: whitesmoke; border-radius:10px; text-align:center"> <h5>Fungsi Layanan UPT. PLUT KUMKM </h5></li><br>
+    <div class="row">
+            <div class="col-sm-6">
+            <div class="card-body">
+                    <li class="list-group-item bg-success" style="color: whitesmoke; border-radius:10px">Konsultasi dan pendampingan usaha;</li><br>
+                    <li class="list-group-item" style="border-radius: 10px">Pendaftaran usaha pada sistem perizinan berusaha terintegrasi secara elektronik;</li><br>
+                    <li class="list-group-item bg-success" style="color: whitesmoke; border-radius:10px">Pelatihan teknis dan manajerial;</li><br>
+                    <li class="list-group-item" style="border-radius: 10px">Pemenuhan   sertifikasi   dan   standarisasi produk;</li><br>
+                    <li class="list-group-item bg-success" style="color: whitesmoke; border-radius:10px">Pengembangan produk unggulan daerah;</li>
+                    </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card-body">
+                    <li class="list-group-item bg-success" style="color: whitesmoke; border-radius:10px">Promosi   dan   pemasaran   produk   serta informasi pasar;</li>
+                    <li class="list-group-item" style="border-radius: 10px">Inkubasi  bisnis  bagi  koperasi  dan  usaha mikro,  kecil  dan  menengah  serta wirausaha;</li>
+                    <li class="list-group-item bg-success" style="color: whitesmoke; border-radius:10px">Pendataan Koperasi dan Usaha Mikro, kecil dan menengah serta wirausaha.</li>
+                    <li class="list-group-item" style="border-radius: 10px">Kurasi  pelaku  dan  produk  Usaha  Mikro dan	Usaha   Kecil   termasuk   yang   akan melakukan usaha di lokasi infrastruktur publik;</li>
+                    <li class="list-group-item bg-success" style="color: whitesmoke; border-radius:10px">Peningkatan sinergi dengan kementerian/lembaga, Pemerintah Daerah,  dan  pemangku  kepentingan dalam rangka pengelolaan dan pengembangan PLUT KUMKM.</li>
+            </div>
+        </div>
+    </div>
+    <br>
     <div class="container text-center">
         <h2>LOKASI UPT. PLUT KUMKM</h2>
         <div class="map-wrapper" style="overflow:hidden;padding-bottom:50%;position:relative;height:0;">
