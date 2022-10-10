@@ -36,7 +36,7 @@
                 <div class="row mb-4">
                     <div class="col">
                         <label for="usaha">Nama Usaha*</label>
-                        <input type="text" class="form-control @error('nama_usaha') is-invalid @enderror" name="nama_usaha"
+                        <input type="text" disabled class="form-control @error('nama_usaha') is-invalid @enderror" name="nama_usaha"
                             value="{{ auth()->user()->nama_usaha }}">
                         @error('nama_usaha')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="col">
                         <label for="pemilik">Nama Pemilik*</label>
-                        <input type="text" class="form-control @error('nama_pemilik') is-invalid @enderror"
+                        <input type="text" disabled class="form-control @error('nama_pemilik') is-invalid @enderror"
                             name="nama_pemilik" value="{{ auth()->user()->nama }}">
                         @error('nama_pemilik')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -80,8 +80,8 @@
                     </div>
                     <div class="col">
                         <label for="provinsi">Provinsi*</label>
-                        <input type="text" name="provinsi" value="{{ old('provinsi') }}"
-                            class="form-control @error('provinsi') is-invalid @enderror">
+                        <input type="text" disabled name="provinsi" value="{{ old('provinsi') }}"
+                            class="form-control @error('provinsi') is-invalid @enderror" placeholder="Riau">
                         @error('provinsi')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

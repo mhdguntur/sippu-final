@@ -10,7 +10,7 @@
                     <li class="list-group-item">No. Telpon: {{ $user->no_telp }}</li>
                     <li class="list-group-item">Sektor Usaha: {{ $user->sektor_usaha }}</li>
                     <li class="list-group-item">Produk Hasil: {{ $user->produk_hasil }}</li>
-                    <li class="list-group-item">Pemasaran Online: {{ $user->pemasaran_online }}</li>
+                    <li class="list-group-item">Kabupaten/Kota: {{ $user->kelurahan }}</li>
                 </ul>
             </div>
     </div>

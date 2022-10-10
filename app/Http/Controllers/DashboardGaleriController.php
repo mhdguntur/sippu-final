@@ -12,7 +12,7 @@ class DashboardGaleriController extends Controller
     {
         $data = $request->validate([
             'produk_id' => 'required',
-            'url_foto' => 'required|mimes:png,jpg,jpeg|max:4096'
+            'url_foto' => 'required|mimes:png,jpg,jpeg'
         ]);
         $data['url_foto'] = $request->file('url_foto')->store('produk-galeri');
 

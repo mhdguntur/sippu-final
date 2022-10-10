@@ -129,7 +129,7 @@
 				</div>
 				<div class="row mb-3">
 					<div class="col-md col-md-sm-12">
-						<label for="no_tdp">No. TDP*</label>
+						<label for="no_tdp">No. Mitra*</label>
 						<input type="text" value="{{ old('no_tdp') }}" name="no_tdp" id="no_tdp"
 							class="form-control @error('no_tdp') is-invalid @enderror">
 						@error('no_tdp')
@@ -167,7 +167,8 @@
 					<div class="col-md col-md-sm-12">
 						<label for="sektor_usaha">Sektor Usaha*</label>
 						<select name="sektor_usaha" id="sektor_usaha" class="form-control @error('sektor_usaha') is-invalid @enderror">
-							<option value="Makanan dan Minuman  ">Makanan dan Minuman</option>
+							<option value="">Pilih Sektor Usaha</option>
+							<option value="Makanan dan Minuman">Makanan dan Minuman</option>
 							<option value="Bisnis Fashion">Bisnis Fashion</option>
 							<option value="Bisnis Pendidikan">Bisnis Pendidikan</option>
 							<option value="Bisnis Otomotif">Bisnis Otomotif</option>
@@ -249,7 +250,7 @@
 				<h5 class="mb-4">III. Profile Usaha</h5>
 				<div class="row mb-3">
 					<div class="col-md col-md-sm-12">
-						<label for="alamat">Alamat Jalan*</label>
+						<label for="alamat">Alamat Lengkap*</label>
 						<input type="text" value="{{ old('alamat') }}" name="alamat" id="alamat"
 							class="form-control @error('alamat') is-invalid @enderror">
 						@error('alamat')
@@ -267,9 +268,22 @@
 				</div>
 				<div class="row mb-3">
 					<div class="col-md col-md-sm-12">
-						<label for="kelurahan">Kelurahan/Desa*</label>
-						<input type="text" value="{{ old('kelurahan') }}" name="kelurahan" id="kelurahan"
-							class="form-control @error('kelurahan') is-invalid @enderror">
+						<label for="kelurahan">Kabupaten/Kota*</label>
+                        <select name="kelurahan" id="kelurahan" class="form-control @error('kelurahan') is-invalid @enderror">
+                            <option value="">Pilih Kab/Kota</option>
+                            <option value="Kabupaten Bengkalis">Kabupaten Bengkalis</option>
+                            <option value="Kabupaten Indragiri Hilir">Kabupaten Indragiri Hilir</option>
+                            <option value="Kabupaten Indragiri Hulu">Kabupaten Indragiri Hulu</option>
+                            <option value="Kabupaten Kampar">Kabupaten Kampar</option>
+                            <option value="Kabupaten Kepulauan Meranti">Kabupaten Kepulauan Meranti</option>
+                            <option value="Kabupaten Kuantan Singingi">Kabupaten Kuantan Singingi</option>
+                            <option value="Kabupaten Pelalawan">Kabupaten Pelalawan</option>
+                            <option value="Kabupaten Rokan Hilir">Kabupaten Rokan Hilir</option>
+                            <option value="Kabupaten Rokan Hulu">Kabupaten Rokan Hulu</option>
+                            <option value="Kabupaten Siak">Kabupaten Siak</option>
+                            <option value="Kota Dumai">Kota Dumai</option>
+                            <option value="Kota Pekanbaru">Kota Pekanbaru</option>
+                        </select>
 						@error('kelurahan')
 							<div class="invalid-feedback">{{ $message }}</div>
 						@enderror

@@ -13,22 +13,21 @@
             </div>
             <div class="col-sm-8">
                 <div class="card" style="border-radius: 10px;">
-                <div class="card-header bg-success" style="border-radius: 10px;">
-                    <h5 style="color: whitesmoke; text-align:center;">Kata Sambutan</h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-title">Assalamualaikum wr.wb <br>
-                    Selamat datang di website kami <br>
-                    Website ini hadir utk melayani UKM dan UMKM. <br> <br>
-                    Dengan adanya web ini UKM dan UMKM dapat mendaftar menjadi binaan dari UPT PLUT Dinas PERINDAGKOP UKM Provinsi Riau secara online, mendapatkan informasi layanan  dan pembinaan yg ada di UPT PLUT.
-                    Semoga website ini bermanfaat buat para UKM dan UMKM. <br> <br>
-                    Salam hangat untuk pluters semua <br>
-                    PLUT Rumah UMKM <br>
-                    UMKM naik kelas. <br>
-                    Wassalamualaikum wr.wb
-                    </p>
-                    <p class="card-text"></p>
-                </div>
+                    <div class="card-header bg-success" style="border-radius: 10px;">
+                        <h5 style="color: whitesmoke; text-align:center;">Kata Sambutan</h5>
+                    </div>
+                        <div class="card-body">
+                            <p class="card-title">Assalamualaikum wr.wb <br>
+                            Selamat datang di website kami <br>
+                            Website ini hadir utk melayani UKM dan UMKM. <br> <br>
+                            Dengan adanya web ini UKM dan UMKM dapat mendaftar menjadi binaan dari UPT PLUT Dinas PERINDAGKOP UKM Provinsi Riau secara online, mendapatkan informasi layanan  dan pembinaan yg ada di UPT PLUT.
+                            Semoga website ini bermanfaat buat para UKM dan UMKM. <br> <br>
+                            Salam hangat untuk pluters semua <br>
+                            PLUT Rumah UMKM <br>
+                            UMKM naik kelas. <br>
+                            Wassalamualaikum wr.wb
+                            </p>
+                        </div>
                 </div>
             </div>
 </div>
@@ -44,7 +43,9 @@
                 meningkatkan (1) kinerja produksi, (2) kinerja pemasaran, (3) akses ke pembiayaan , (4) pengembangan SDM melalui
                 peningkatan kapasitas kewirausahaan, teknis dan manajerial, serta (5) kinerja kelembagaan dalam
                 rangka meningkatkan daya saing KUMKM.</p>
-            <a href="{{ url('produk') }}" class="btn btn-success">Lihat Karya UMKM !</a>
+            <a href="https://www.instagram.com/plutriau/" target="_blank" rel="noopener noreferrer"> <img src="img/ig.png" style="width: 30px" alt=""></a>
+            <a href="https://www.facebook.com/plutkumkmriau" target="_blank" rel="noopener noreferrer"> <img src="img/fb.png" style="width: 40px" alt=""></a>
+            <a href="{{ url('produk') }}" class="btn btn-dark">Lihat Karya UMKM !</a>
         </div>
     {{-- <div class="card-footer text-muted">
         2 days ago
@@ -129,8 +130,8 @@
     </div>
     <br>
     <div class="container text-center">
+        <h2>LOKASI UPT. PLUT KUMKM</h2>
         <div class="map-wrapper" style="overflow:hidden;padding-bottom:50%;position:relative;height:0;">
-            <h2>LOKASI UPT. PLUT KUMKM</h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15958.741997385674!2d101.4074391!3d0.4675151!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x49f1e4108c2fe0ef!2sPLUT%20KUMKM%20Provinsi%20Riau!5e0!3m2!1sen!2sid!4v1665208622547!5m2!1sen!2sid" width="1100" height="450" style="left:0;top:0;height:100%;width:100%;position:absolute;border-radius:10px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>

@@ -23,8 +23,7 @@
     <div class="row mt-5">
         <div class="col-lg-8 col-sm-12">
             <h3 class="font-weight-bold">{{ $produk->nama }}</h3>
-            <a href="{{ url('produk/tentang/' . $produk->user->id) }}" class="text-secondary mb-3 d-block">By:
-                {{ $produk->user->nama }}</a>
+            <a href="{{ url('produk/tentang/' . $produk->user->id) }}" class="btn btn-success">Hubungi Pemilik</a> <br><br>
             <h5 style="color: rgb(255, 38, 0);">Rp. {{number_format($produk->harga) }}</h5>
             <p>{{ $produk->deskripsi }}</p>
         </div>

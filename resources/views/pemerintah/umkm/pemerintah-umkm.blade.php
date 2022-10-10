@@ -29,13 +29,13 @@
 				<table class="table">
 					<thead class="rounded">
 						<tr>
-							<th>Id</th>
+							<th>No Mitra</th>
 							<th>Nama UMKM</th>
 							<th>Nama Pemilik</th>
 							<th>Sektor Usaha</th>
 							<th>No. Telpon</th>
 							<th>
-								Kelurahan/Desa
+								Kabupaten/Kota
 								<a href="{{ route('umkm.index', ['sorttype' => 'asc']) }}">
 									<i class="fa-solid fa-arrow-up"></i>
 								</a>
@@ -50,7 +50,7 @@
 					<tbody id="umkm">
 						@forelse ($umkm as $data)
 							<tr>
-								<td>{{ $data->id }}</td>
+								<td>{{ $data->no_tdp }}</td>
 								<td>{{ $data->nama_usaha }}</td>
 								<td>{{ $data->nama }}</td>
 								<td>{{ $data->sektor_usaha }}</td>

@@ -2,8 +2,8 @@
     <div class="container">
         <img src="{{ asset('img/logo.png') }}">
         <a class="navbar-brand text-uppercase" href="{{ url('/') }}">
-            DISPERINDAGKOP UKM Provinsi
-            <span class="d-block">Riau | UPT. PLUT KUMKM</span>
+            UPT. PLUT KUMKM
+            <span class="d-block">DISPERINDAGKOP UKM | PROV. RIAU</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

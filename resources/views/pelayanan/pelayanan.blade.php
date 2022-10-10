@@ -13,9 +13,9 @@
         @forelse ($pelayanan as $data)
             <div class="col-lg-3 col-sm-12 mb-3">
                 <a href="{{ url('pelayanan/' . $data->judul) }}" class="text-decoration-none text-dark">
-                    <div class="card border-dark">
+                    <div class="card">
                         @if ($data->url_foto)
-                            <img src="{{ asset('storage/' . $data->url_foto) }}" class="img-fluid">
+                            <img src="{{ asset('storage/' . $data->url_foto) }}" style="width:270px; height:250px; object-fit: cover;" class="img-fluid" >
                         @else
                             <img src="https://source.unsplash.com/random/300x200" class="card-img-top">
                         @endif
